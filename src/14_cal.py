@@ -22,3 +22,33 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+#cal_input = input("Enter a month: ")
+
+months = {
+    "january": 1,
+    "february": 2,
+    "march": 3,
+    "april": 4,
+    "may": 5,
+    "june": 6,
+    "july": 7,
+    "august": 8,
+    "september": 9,
+    "october": 10,
+    "november": 11,
+    "december": 12
+}
+print(datetime.today().year)
+
+
+def print_calendar(month=datetime.today().month, year=datetime.today().year):
+    print(calendar.month(year, month))
+
+
+if len(sys.argv) == 3:
+    print_calendar(year=int(sys.argv[1]), month=int(sys.argv[2]))
+elif len(sys.argv) == 2:
+    print_calendar(month=int(sys.argv[1]))
+else:
+    print_calendar()
